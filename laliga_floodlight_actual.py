@@ -43,6 +43,10 @@ def draw_pitch(ax, pitch: Pitch):
     # This is the proper way to draw pitches in Floodlight
     pitch.plot(ax=ax, color_scheme='standard', show_axis_ticks=False)
     
+    # Override pitch color to match screenshot (dark, muted green)
+    # The screenshot shows a deep forest/olive green, not the default bright green
+    ax.set_facecolor('#2d5016')  # Dark muted green to match screenshot
+    
     # Add dashed lines dividing pitch into thirds (common in football analysis)
     # These help visualize attacking, middle, and defensive thirds
     x_min, x_max = pitch.xlim
