@@ -1,6 +1,13 @@
 # La Liga Floodlight Example - Pitch Map Visualizations
 
-A comprehensive Python script for creating football pitch map visualizations from OPTA F24 XML data.
+This repository contains Python scripts for creating football pitch map visualizations from OPTA F24 XML data using the **Floodlight library**.
+
+## Script
+
+- **`laliga_floodlight_actual.py`** - Uses the Floodlight library exclusively to parse OPTA F24 XML and create visualizations
+  - Uses Floodlight's `read_event_data_xml()` for data parsing
+  - Uses Floodlight's `pitch.plot()` for correct pitch markings
+  - All 15 metric visualizations using only Floodlight
 
 ## Features
 
@@ -31,6 +38,7 @@ A comprehensive Python script for creating football pitch map visualizations fro
 - Python 3.7+
 - matplotlib >= 3.5.0
 - numpy >= 1.21.0
+- **floodlight >= 1.0.0** (required for `laliga_floodlight_actual.py`)
 - OPTA F24 XML data files
 
 ## Installation
@@ -59,8 +67,10 @@ pip install -r requirements.txt
 
 3. **Run the script**:
    ```bash
-   python laliga_floodlight_example.py
+   python laliga_floodlight_actual.py
    ```
+   
+   **Note**: This script uses only Floodlight for all data parsing and pitch visualization.
 
 4. **Output files** will be generated in the `pitch_maps/` directory:
    - Individual PNG files for each visualization
@@ -110,10 +120,11 @@ pitch_maps/
 
 ## How It Works
 
-1. **Parses OPTA F24 XML** files to extract event data
-2. **Identifies key passes** using OPTA's definition: "The final pass from a player to their teammate who then makes an attempt on Goal without scoring"
-3. **Creates visualizations** for various metrics using matplotlib
-4. **Generates PDFs** with all visualizations for easy sharing and presentation
+1. **Parses OPTA F24 XML** files using Floodlight's `read_event_data_xml()` function
+2. **Uses Floodlight's pitch visualization** via `pitch.plot()` for correct markings
+3. **Identifies key passes** using OPTA's definition: "The final pass from a player to their teammate who then makes an attempt on Goal without scoring"
+4. **Creates visualizations** for various metrics using matplotlib (plotting data points on Floodlight's pitch)
+5. **Generates PDFs** with all visualizations for easy sharing and presentation
 
 ## Key Features Explained
 
@@ -175,7 +186,7 @@ This educational project is provided as-is for learning purposes. Please respect
 
 - Built for Module 10 - Collaborative Activity
 - Uses OPTA F24 XML data format
-- Inspired by Floodlight library capabilities
+- **Uses Floodlight library exclusively** for data parsing and pitch visualization
 - Visualization design inspired by professional sports analytics
 
 ## Related Resources

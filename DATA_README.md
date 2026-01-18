@@ -42,7 +42,7 @@ The script expects XML files in this structure:
 
 ### To Use Your Own Data Location
 
-Modify line ~1200 in `laliga_floodlight_example.py`:
+Modify the `data_dir` variable in `laliga_floodlight_actual.py` (around line 1000):
 
 ```python
 # Change this line:
