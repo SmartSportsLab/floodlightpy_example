@@ -3,9 +3,14 @@
 data/
 F24*/
 **/F24*/
-pitch_maps/
+
+# Generated output files (ignore by default, but allow pitch_maps/ for examples)
 *.pdf
 *.png
+# Exception: Allow pitch_maps/ folder to be tracked (contains example visualizations)
+!pitch_maps/
+!pitch_maps/**/*.pdf
+!pitch_maps/**/*.png
 
 # Python
 __pycache__/
